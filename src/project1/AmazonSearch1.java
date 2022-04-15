@@ -33,26 +33,26 @@ public class AmazonSearch1 {
 		searchclick.click();
 		
 				
-		List<WebElement> data= driver.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
+		List<WebElement> PhoneList= driver.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
 		System.out.println(data.size());
 
-		List<WebElement> prices= driver.findElements(By.xpath("//span[@class='a-price-whole']"));
+		List<WebElement> PriceList= driver.findElements(By.xpath("//span[@class='a-price-whole']"));
 
-		for( WebElement el: data){
+		for( WebElement el: PhoneList){
 			
 			System.out.println(el.getText());
 		}
 		
-			for( WebElement e2: prices) {
+			for( WebElement e2: PriceList) {
 				System.out.println(	"Phone lists and prices are ...." +((WebElement) e2).getText());
 	
 		}
 			
-			for(int i=0 ;i<data.size();i++)
+			for(int i=0 ;i<PhoneList.size();i++)
 			{
-				System.out.println(""+data.get(i).getText() +  "... it's price is...> "  + prices.get(i).getText());
+				System.out.println(""+PhoneList.get(i).getText() +  "... it's price is...> "  + PriceList.get(i).getText());
 			}
-			//driver.close();
+			driver.close();
 
 	        }
 	}
